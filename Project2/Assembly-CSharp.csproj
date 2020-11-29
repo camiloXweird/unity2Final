@@ -53,16 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\CameraTarget.cs" />
+     <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectController.cs" />
+     <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectDemo.cs" />
+     <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectShaderPropertyStr.cs" />
+     <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\RenderEffect.cs" />
+     <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\TransformExtension.cs" />
      <Compile Include="Assets\ParticleShadersVol1\SampleSceneAssets\Scripts\CameraRig.cs" />
      <Compile Include="Assets\ParticleShadersVol1\SampleSceneAssets\Scripts\ColorPicker.cs" />
      <Compile Include="Assets\ParticleShadersVol1\SampleSceneAssets\Scripts\EMUI.cs" />
@@ -70,6 +66,7 @@
      <Compile Include="Assets\ParticleShadersVol1\SampleSceneAssets\Scripts\ExamplesController.cs" />
      <Compile Include="Assets\ParticleShadersVol1\SampleSceneAssets\Scripts\GetName.cs" />
      <Compile Include="Assets\ParticleShadersVol1\SampleSceneAssets\Scripts\LightRig.cs" />
+     <Compile Include="Assets\Scripts\BarraVida.cs" />
      <Compile Include="Assets\Scripts\controlDisparo.cs" />
      <Compile Include="Assets\Scripts\ControlEnemigo.cs" />
      <Compile Include="Assets\Scripts\ControlPatrullaje.cs" />
@@ -77,18 +74,22 @@
      <Compile Include="Assets\Scripts\playerControler.cs" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EM_Particles_Lit_MultiLight.shader" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EM_Particles_Lit_Fallback.shader" />
-     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
-     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
-     <None Include="Assets\JMO Assets\Cartoon FX\CartoonFX Free.txt" />
      <None Include="Assets\ParticleShadersVol1\README.txt" />
      <None Include="Assets\NatureStarterKit2\info.txt" />
      <None Include="Assets\ParticleShadersVol1\SampleSceneAssets\Materials\LightBulb.shader" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EM_Particles_Lit.shader" />
-     <None Include="Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+     <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\effect_distortion_mask.shader" />
+     <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddSoftEffect.shader" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EMParticleFunctions.cginc" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EMParticleVariables.cginc" />
+     <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\Toon Blended Premmultiply.shader" />
+     <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticlePremultiplyBlend.shader" />
+     <None Include="Assets\Particlecollection_Free samples\READ ME.txt" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EM_Particles_Unlit.shader" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EMParticleLighting.cginc" />
+     <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddEffect.shader" />
+     <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\Toon Additive.shader" />
+     <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleBlendEffect.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/57350/Documents/unity2Final/Project2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

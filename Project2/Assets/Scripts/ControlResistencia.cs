@@ -7,16 +7,14 @@ using UnityEngine.UI;
 public class ControlResistencia : MonoBehaviour
 {
 
-    // public Transform particulasImpacto;
-    // private ParticleSystem systemaParticulasRomper;
+    public Transform particulasImpacto;
+    private ParticleSystem systemaParticulasRomper;
 
     public string objetosResistencia;
 
     public int resistencia;
 
     public Text textoContador;
-    // public Text textoGanar;
-
     public static int contador = 0;
 
 
@@ -24,33 +22,29 @@ public class ControlResistencia : MonoBehaviour
     void Start()
     {
         textoContador.text = "Puntaje: " + contador.ToString();
-        // systemaParticulasRomper = particulasImpacto.GetComponent<ParticleSystem>();
-        // systemaParticulasRomper.Stop();
+        systemaParticulasRomper = particulasImpacto.GetComponent<ParticleSystem>();
+        systemaParticulasRomper.Stop();
 
     }
 
     public void RegistrarImpacto(Vector3 puntoImpacto)
     {
-        // particulasImpacto.position = puntoImpacto;
-        // systemaParticulasRomper.Play(); 
+        systemaParticulasRomper.Play();
+        particulasImpacto.position = puntoImpacto;
 
-        if (objetosResistencia == "objetosResistencia")
+        resistencia--;
+        if (resistencia <= 0)
         {
-            resistencia--;
-            if (resistencia <= 0)
+            if (gameObject.CompareTag("Enemigo"))
             {
-                Destroy(transform.gameObject);
-                contador++;
-                textoContador.text = "Puntaje: " + contador.ToString();
-
+                contador += 2;
             }
-        }
-        else
-        {
+            else if (gameObject.CompareTag("Destruible"))
+            {
+                contador++;
+            }
             Destroy(transform.gameObject);
-            contador++;
             textoContador.text = "Puntaje: " + contador.ToString();
-
         }
     }
 
@@ -58,9 +52,6 @@ public class ControlResistencia : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //  systemaParticulasRomper.Play();
-
-        // systemaParticulasRomper.Play();
 
     }
 }
