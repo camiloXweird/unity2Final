@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Destruible
+  - Terreno
   layers:
   - Default
   - TransparentFX

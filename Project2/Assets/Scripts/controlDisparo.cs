@@ -8,72 +8,77 @@ public class controlDisparo : MonoBehaviour
 
     public GameObject Player;
 
-    public float TiempoEntreDisparos =  1f;
-    public float rango =  10f;
+    public float TiempoEntreDisparos = 1f;
+    public float rango = 10f;
 
 
     float timer;
     Ray shootRay; //controla el rayo 
     RaycastHit shootHit; // el impacto de rayo 
-    int  shootableMask;
-    LineRenderer gunLine; 
+    int shootableMask;
+    LineRenderer gunLine;
     Light gunLight;
 
-     float effectsDisplayTime = 1.2f;
-     
+    float effectsDisplayTime = 1.2f;
 
-     
-    
-    void Shoot(){
-        Vector3 ubicacion = new Vector3 (Player.transform.position.x,Player.transform.position.y+ 0.6f,Player.transform.position.z);
+
+
+
+    void Shoot()
+    {
+        Vector3 ubicacion = new Vector3(Player.transform.position.x, Player.transform.position.y + 0.6f, Player.transform.position.z);
         timer = 0f;
         gunLine.enabled = true;
         gunLight.enabled = true;
         shootRay.origin = ubicacion;
-        shootRay.direction = transform.forward; 
-        gunLine.SetPosition (0,ubicacion);
+        shootRay.direction = transform.forward;
+        gunLine.SetPosition(0, ubicacion);
 
-        if(Physics.Raycast(shootRay, out shootHit, rango, shootableMask)){
- 
-             // Destroy(shootHit.collider.gameObject);
+        if (Physics.Raycast(shootRay, out shootHit, rango, shootableMask))
+        {
+
             ControlResistencia resistencia = shootHit.collider.gameObject.GetComponent<ControlResistencia>();
-            if(resistencia!= null){
+            if (resistencia != null)
+            {
                 resistencia.RegistrarImpacto(shootHit.point);
 
                 gunLine.SetPosition(1, shootHit.point);
             }
             gunLine.SetPosition(1, shootHit.point);
- 
-        }else{
-            Debug.Log("No se impacto ningun objeto"); 
+
+        }
+        else
+        {
+            Debug.Log("No se impacto ningun objeto");
             gunLine.SetPosition(1, shootRay.origin + shootRay.direction * rango);
         }
     }
 
-    void Awake(){
+    void Awake()
+    {
         shootableMask = LayerMask.GetMask("Shootable");
-        gunLine= GetComponent<LineRenderer> ();
-        gunLight= GetComponent<Light> ();
+        gunLine = GetComponent<LineRenderer>();
+        gunLight = GetComponent<Light>();
     }
 
-    public void DisableEffects(){
-        gunLine.enabled  = false;
+    public void DisableEffects()
+    {
+        gunLine.enabled = false;
         gunLight.enabled = false;
     }
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
         timer += Time.deltaTime;
-        if(timer >= TiempoEntreDisparos * effectsDisplayTime){
-
-                DisableEffects();
+        if (timer >= TiempoEntreDisparos * effectsDisplayTime)
+        {
+            DisableEffects();
         }
     }
 }
