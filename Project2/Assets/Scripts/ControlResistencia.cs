@@ -16,15 +16,18 @@ public class ControlResistencia : MonoBehaviour
 
     public Text textoContador;
     public static int contador = 0;
+    Animator anim;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         textoContador.text = "Puntaje: " + contador.ToString();
         systemaParticulasRomper = particulasImpacto.GetComponent<ParticleSystem>();
         systemaParticulasRomper.Stop();
-
     }
 
     public void RegistrarImpacto(Vector3 puntoImpacto)
@@ -37,13 +40,13 @@ public class ControlResistencia : MonoBehaviour
         {
             if (gameObject.CompareTag("Enemigo"))
             {
-                contador += 2;
+                StartCoroutine(animarMuerte());
             }
             else if (gameObject.CompareTag("Destruible"))
             {
                 contador++;
+                Destroy(transform.gameObject);
             }
-            Destroy(transform.gameObject);
             textoContador.text = "Puntaje: " + contador.ToString();
         }
     }
@@ -53,5 +56,14 @@ public class ControlResistencia : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public IEnumerator animarMuerte()
+    {
+        anim.SetBool("Muerte", true);
+        yield return new WaitForSecondsRealtime(3.0f);
+        anim.SetBool("Muerte", false);
+        Destroy(transform.gameObject);
+        contador += 2;
     }
 }

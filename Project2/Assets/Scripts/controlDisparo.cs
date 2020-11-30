@@ -21,8 +21,7 @@ public class controlDisparo : MonoBehaviour
 
     float effectsDisplayTime = 1.2f;
 
-
-
+    public AudioSource sonidoObjeto;
 
     void Shoot()
     {
@@ -41,8 +40,11 @@ public class controlDisparo : MonoBehaviour
             if (resistencia != null)
             {
                 resistencia.RegistrarImpacto(shootHit.point);
-
                 gunLine.SetPosition(1, shootHit.point);
+                if (shootHit.collider.gameObject.CompareTag("Destruible"))
+                {
+                    sonidoObjeto.Play();
+                }
             }
             gunLine.SetPosition(1, shootHit.point);
 
@@ -69,7 +71,7 @@ public class controlDisparo : MonoBehaviour
 
     void Start()
     {
-
+        sonidoObjeto = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

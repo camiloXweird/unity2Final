@@ -98,7 +98,6 @@ public class playerControler : MonoBehaviour
 
     public IEnumerator animarMuerte()
     {
-
         anim.SetBool("Muerte", true);
         yield return new WaitForSecondsRealtime(2.0f);
         StartCoroutine(ReiniciarNivel(0.5f));
