@@ -66,6 +66,9 @@
      <Compile Include="Assets\ParticleShadersVol1\SampleSceneAssets\Scripts\ExamplesController.cs" />
      <Compile Include="Assets\ParticleShadersVol1\SampleSceneAssets\Scripts\GetName.cs" />
      <Compile Include="Assets\ParticleShadersVol1\SampleSceneAssets\Scripts\LightRig.cs" />
+     <Compile Include="Assets\Santuary\Scripts\AnimationController.cs" />
+     <Compile Include="Assets\Santuary\Scripts\CameraFallow.cs" />
+     <Compile Include="Assets\Santuary\Scripts\controler.cs" />
      <Compile Include="Assets\Scripts\BarraVida.cs" />
      <Compile Include="Assets\Scripts\controlDisparo.cs" />
      <Compile Include="Assets\Scripts\ControlEnemigo.cs" />
@@ -79,6 +82,7 @@
      <None Include="Assets\NatureStarterKit2\info.txt" />
      <None Include="Assets\ParticleShadersVol1\SampleSceneAssets\Materials\LightBulb.shader" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EM_Particles_Lit.shader" />
+     <None Include="Assets\Santuary\Readme.txt" />
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\effect_distortion_mask.shader" />
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddSoftEffect.shader" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EMParticleFunctions.cginc" />
