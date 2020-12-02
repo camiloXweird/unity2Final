@@ -7,6 +7,7 @@ TagManager:
   - Destruible
   - Terreno
   - Enemigo
+  - Ganar
   layers:
   - Default
   - TransparentFX

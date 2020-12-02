@@ -103,4 +103,12 @@ public class playerControler : MonoBehaviour
         StartCoroutine(ReiniciarNivel(0.5f));
         anim.SetBool("Muerte", false);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+
+        if(other.gameObject.CompareTag("Ganar")){
+              SceneManager.LoadScene(1);
+        }
+    }
 }

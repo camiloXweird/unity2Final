@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ControlResistencia : MonoBehaviour
 {
@@ -46,6 +47,9 @@ public class ControlResistencia : MonoBehaviour
             {
                 contador++;
                 Destroy(transform.gameObject);
+            if(contador > 9){
+                SceneManager.LoadScene(1);
+            }
             }
             textoContador.text = "Puntaje: " + contador.ToString();
         }
@@ -55,7 +59,7 @@ public class ControlResistencia : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
     public IEnumerator animarMuerte()
