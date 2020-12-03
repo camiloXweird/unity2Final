@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Mixamo\Magic Pack\Demo\CameraScroll.cs" />
      <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\CameraTarget.cs" />
      <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectController.cs" />
      <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectDemo.cs" />
@@ -75,7 +76,9 @@
      <Compile Include="Assets\Scripts\ControlPatrullaje.cs" />
      <Compile Include="Assets\Scripts\ControlResistencia.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\GameController2.cs" />
      <Compile Include="Assets\Scripts\playerControler.cs" />
+     <Compile Include="Assets\Scripts\PlayerController2.cs" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EM_Particles_Lit_MultiLight.shader" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EM_Particles_Lit_Fallback.shader" />
      <None Include="Assets\ParticleShadersVol1\README.txt" />
@@ -86,6 +89,8 @@
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\effect_distortion_mask.shader" />
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddSoftEffect.shader" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EMParticleFunctions.cginc" />
+     <None Include="Assets\Fantasy Objct free set\Read me.txt" />
+     <None Include="Assets\Spiders\animations list.txt" />
      <None Include="Assets\ParticleShadersVol1\Shaders\EMParticleVariables.cginc" />
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\Toon Blended Premmultiply.shader" />
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticlePremultiplyBlend.shader" />
