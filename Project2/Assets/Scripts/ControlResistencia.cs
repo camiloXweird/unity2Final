@@ -56,73 +56,63 @@ public class ControlResistencia : MonoBehaviour
             {
                 contador++;
                 Destroy(transform.gameObject);
-            if(contador > 9){
-                SceneManager.LoadScene(1);
-            }
             }
             textoContador.text = "Puntaje: " + contador.ToString();
         }
     }
 
-    public void OnParticleCollision(GameObject other){
+    public void OnParticleCollision(GameObject other)
+    {
         Debug.Log("coliision cubito");
         particulasImpacto.position = transform.position;
         systemaParticulasRomper.Play();
-        
+
         resistencia--;
 
-        
+
         if (resistencia <= 0)
         {
-             if (gameObject.CompareTag("Destruible"))
+            if (gameObject.CompareTag("Destruible"))
             {
-             StartCoroutine(sonido());
-            }else if (gameObject.CompareTag("Enemigo")){
+                StartCoroutine(sonido());
+            }
+            else if (gameObject.CompareTag("Enemigo"))
+            {
                 StartCoroutine(animarMuerte());
-                
-            
+
+
             }
         }
-        
 
-            // transform.gameObject.SetActive(false);
+
+        // transform.gameObject.SetActive(false);
 
     }
 
-        public IEnumerator sonido()
+    public IEnumerator sonido()
     {
 
         sonidoObjeto.Play();
         yield return new WaitForSecondsRealtime(1f);
         contador2++;
         textoContador.text = "Puntaje: " + contador2.ToString();
-        Destroy(transform.gameObject);              
-        
-       
+        Destroy(transform.gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
         // sonidoObjeto.Play();
-       
+
     }
 
-    public IEnumerator animarMuerte() 
+    public IEnumerator animarMuerte()
     {
         anim.SetBool("Muerte", true);
         yield return new WaitForSecondsRealtime(3.0f);
         anim.SetBool("Muerte", false);
         Destroy(transform.gameObject);
         contador += 2;
-    }
-
-    public IEnumerator animarMuerte2() 
-    {
-        yield return new WaitForSecondsRealtime(3.0f);
-        Destroy(transform.gameObject);
         contador2 += 2;
-        textoContador.text = "Puntaje: " + contador2.ToString();
-
     }
 }

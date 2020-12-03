@@ -30,22 +30,22 @@ public class PlayerController2 : MonoBehaviour
         sonidoDisparo.Stop();
         vidaActual = vidaMaxima;
         barraVida.setVidaMaxima(vidaMaxima);
-
-
-        
     }
 
-     public void Animar()
-    { 
+    public void Animar()
+    {
         StartCoroutine(EjecutarPoderPiso());
     }
 
     void OnCollisionEnter(Collision other)
     {
-
         if (other.gameObject.CompareTag("Enemigo"))
         {
             StartCoroutine(DañoEnemigo());
+        }
+        if (other.gameObject.CompareTag("Terreno"))
+        {
+            StartCoroutine(ReiniciarNivel());
         }
     }
 
@@ -66,7 +66,7 @@ public class PlayerController2 : MonoBehaviour
         anim.SetBool("Podersito", false);
     }
 
-     public IEnumerator ReiniciarNivel(float tiempo = 5.0f)
+    public IEnumerator ReiniciarNivel(float tiempo = 5.0f)
     {
         yield return new WaitForSecondsRealtime(tiempo);
         SceneManager.LoadScene("Escena2");
@@ -74,10 +74,11 @@ public class PlayerController2 : MonoBehaviour
         ControlResistencia.contador2 = 0;
     }
 
-     public IEnumerator DetenerPoder(){
-        yield return new WaitForSecondsRealtime (1.0f);
+    public IEnumerator DetenerPoder()
+    {
+        yield return new WaitForSecondsRealtime(1.0f);
         poderPiso.Stop();
-    
+
     }
 
     public void recibirDaño(int daño)

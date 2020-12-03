@@ -59,6 +59,9 @@ public class playerControler : MonoBehaviour
         {
             StartCoroutine(DañoEnemigo());
         }
+        if(other.gameObject.CompareTag("Ganar")){
+              SceneManager.LoadScene(1);
+        }
     }
 
     // Update is called once per frame
@@ -102,13 +105,5 @@ public class playerControler : MonoBehaviour
         yield return new WaitForSecondsRealtime(2.0f);
         StartCoroutine(ReiniciarNivel(0.5f));
         anim.SetBool("Muerte", false);
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-
-        if(other.gameObject.CompareTag("Ganar")){
-              SceneManager.LoadScene(1);
-        }
     }
 }
